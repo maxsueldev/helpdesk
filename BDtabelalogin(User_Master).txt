@@ -1,0 +1,19 @@
+Criar a tabela
+
+--CREATE TABLE login
+(
+  codlogin serial NOT NULL,
+  codusuario integer NOT NULL,
+  login character varying(20) NOT NULL,
+  
+                     crypsenha character varying(50) NOT NULL,
+  bloqueado boolean DEFAULT false,
+  
+                     CONSTRAINT login_pkey PRIMARY KEY (codlogin),
+  CONSTRAINT login_login_key UNIQUE (login)
+)
+
+Inserir usuario e buscar usuario (Senha criptografada)
+
+--INSERT INTO login VALUES (default, 'codigo_do_usuario', 'login_do_usuario', MD5('senha_do_usuario'), default);
+--SELECT * FROM login WHERE login = 'maxsuel' AND crypsenha = MD5('123456') LIMIT 1;
